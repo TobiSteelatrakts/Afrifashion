@@ -1,0 +1,72 @@
+<!--
+  Generated template for the OrdersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="yelloww">
+    <ion-title>Orders</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="greybg">
+
+    <ion-row  *ngIf="showorder==true" justify-content-center>
+        <p>No order yet</p>
+      </ion-row>
+      <ion-row *ngIf="showorder==true" justify-content-center>
+          <!-- <p (click)="gotoproducts()">Go to products >>></p> -->
+          <button (click)="gotoproducts()" ion-button icon-start clear small>
+
+              <div>Go to products >>></div>
+            </button>
+        </ion-row>
+
+    <div  *ngFor="let eachorder of allorder; let i = index;">
+
+        <ion-card >
+
+            <!-- <ion-card-header>
+              Card Header
+            </ion-card-header> -->
+
+            <ion-card-content>
+                <ion-item>
+
+                    <h2 item-start class="textcolor1">#No. {{eachorder.orderid}}</h2>
+                    <p item-end class="fz1" >Booked on: {{eachorder.productdetails[0]['created_at']}}</p>
+
+                  </ion-item>
+                <ion-item>
+                    <ion-thumbnail item-start (click)="gotoorderdetails()">
+                      <img [src]="eachorder.productdetails[0]['image']">
+                    </ion-thumbnail>
+                    <h2 >{{eachorder.productdetails[0]['productname']}}</h2>
+                    <p class="textcolor">${{eachorder.productdetails[0]['productprice']}}</p>
+
+                  </ion-item>
+
+            </ion-card-content>
+
+          </ion-card>
+          <ion-card >
+              <ion-card-content>
+
+                  <ion-row justify-content-center>
+                      <button ion-button icon-start clear small>
+
+                        <!-- <div>MANAGE ORDER</div> -->
+                      </button>
+                  </ion-row>
+
+              </ion-card-content>
+
+            </ion-card>
+    </div>
+
+
+</ion-content>

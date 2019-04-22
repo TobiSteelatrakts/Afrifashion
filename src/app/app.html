@@ -1,0 +1,110 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <!-- <img id='imagebottom' src="assets/icon/splashcar.png"> -->
+    <img class="fullscreen" src="assets/icon/splashfashion.jpg">
+    <img class="flex-toplogo" src="assets/icon/afrifashionlogo.png">
+    <div class="Aligner-item flex-centerr-below name">Welcome to</div>
+    <div class="Aligner-item flex-centerr-driver">Afri Fashion</div>
+    <!-- <img class='metagrget' src="assets/icon/blackcar.jpeg"> -->
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+<ion-menu id="myMenu" [content]="content">
+  <!-- <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+
+    <ion-header no-border>
+      <ion-item no-border>
+        <ion-avatar item-start>
+          <img src="assets/icon/usericon.png">
+        </ion-avatar>
+        <h2>{{dbuserdetails?.name}}</h2>
+        <h4>{{dbuserdetails?.email}}</h4>
+
+      </ion-item>
+  </ion-header>
+
+
+
+  <ion-content>
+    <ion-list>
+      <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]=p.icon></ion-icon> &nbsp;&nbsp; {{p.title}}
+      </button> -->
+  <button (click)="userprofile()" menuClose ion-item >
+
+      <ion-icon ios="ios-home" md="md-home"></ion-icon>
+        &nbsp;&nbsp; Profile
+  </button>
+  <button (click)="cart()" menuClose ion-item >
+      <ion-icon ios="ios-basket" md="md-basket"></ion-icon>
+    &nbsp;&nbsp; Cart
+</button>
+<button (click)="orders()" menuClose ion-item >
+
+    <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+  &nbsp;&nbsp; My Orders
+</button>
+<button (click)="wishlist()" menuClose ion-item >
+
+    <ion-icon ios="ios-heart" md="md-heart"></ion-icon>
+  &nbsp;&nbsp; Wish list
+</button>
+<button (click)="settings()" menuClose ion-item >
+
+    <ion-icon ios="ios-options" md="md-options"></ion-icon>
+  &nbsp;&nbsp; Settings
+</button>
+<!-- <button menuClose ion-item >
+
+    <ion-icon ios="ios-notifications" md="md-notifications"></ion-icon>
+    &nbsp;&nbsp; Notifications
+  </button> -->
+
+  <button menuClose ion-item (click)="faq()" >
+
+      <ion-icon ios="ios-help-circle" md="md-help-circle"></ion-icon>
+  &nbsp;&nbsp; Help $ FAQs
+</button>
+<!-- <button menuClose ion-item >
+
+    <ion-icon ios="ios-glasses" md="md-glasses"></ion-icon>
+  &nbsp;&nbsp; Purchases
+</button> -->
+<button (click)="Logout()" menuClose ion-item >
+
+    <ion-icon name="close"></ion-icon>
+  &nbsp;&nbsp; Logout
+</button>
+    </ion-list>
+
+
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col col-2 offset-1>
+            <ion-icon name="logo-linkedin" style="zoom:2.0;" color="primary"></ion-icon>
+        </ion-col>
+        <ion-col col-2>
+          <ion-icon name="logo-twitter" style="zoom:2.0;" color="primary"></ion-icon>
+        </ion-col>
+        <ion-col col-2>
+            <ion-icon name="logo-facebook" style="zoom:2.0;" color="primary"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <ion-row justify-content-center>
+          <button id="butmargin" color="yelloww" ion-button round >Read More</button>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

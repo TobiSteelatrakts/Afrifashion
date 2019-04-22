@@ -1,0 +1,104 @@
+<!--
+  Generated template for the OrderdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="yelloww">
+    <ion-row justify-content-right>
+
+          <ion-title>Product Details</ion-title>
+        <button *ngIf="addtocartbool===true" ion-button icon-start clear small (click)="gotocart()">
+          <ion-icon name="cart"></ion-icon>
+          <div>1</div>
+        </button>
+
+      </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="greybg">
+
+    <div>
+
+        <ion-card >
+
+            <ion-card-header>
+               <ion-item>
+                  <!-- <h2 >P No. #123444</h2> -->
+                  <h2 >P No. #{{prod.productid}}</h2>
+                  <p>seller:    {{adminname}}</p>
+                  <p>Seller No: {{adminnumber}}</p>
+                  <!-- <p>21/06/2019</p> -->
+                  <p>{{prod.created_at}}</p>
+                  <!-- <p class="textcolor">N5,000</p> -->
+                <ion-thumbnail item-end>
+                  <img [src]="prod.image | safe:'resourceUrl'">
+                </ion-thumbnail>
+
+                <!-- <button ion-button color="light" item-end>2 &nbsp; &nbsp; &nbsp; &nbsp;   <ion-icon name="arrow-dropdown"></ion-icon></button> -->
+              </ion-item>
+
+            </ion-card-header>
+
+            <ion-card-content>
+                <!-- <ion-item>
+
+                    <h2 item-start class="textcolor1">1. Nike Shoes</h2>
+                    <p item-end class="fz1" >$1,19059</p>
+                  </ion-item>
+                  <ion-item>
+
+                      <h2 item-start class="textcolor1">1. Nike Shoes</h2>
+                      <p item-end class="fz1" >$1,19059</p>
+
+                    </ion-item> -->
+
+                    <ion-item>
+
+                        <h2 item-start style="color: darkorange">{{prod.productname}}</h2>
+                        <p item-end class="fz1" style="color: darkorange" >$ {{prod.productprice}}</p>
+
+                      </ion-item>
+
+            </ion-card-content>
+
+          </ion-card>
+          <ion-card >
+              <ion-card-content>
+
+                  <ion-row justify-content-center>
+                      <button ion-button icon-start clear small>
+
+                        <div>GRAND TOTAL</div>
+                      </button>
+
+                  </ion-row>
+                  <ion-row justify-content-center>
+                      <p item-end style="font-size: 20px; font-weight: bolder; color: rgb(255, 145, 0)" >$ {{prod.productprice}}</p>
+                  </ion-row>
+
+
+              </ion-card-content>
+
+            </ion-card>
+            <ion-grid>
+              <button [disabled]='addtocartbool===true' (click)="addtocard()" ion-button block large>Add To Cart</button>
+            </ion-grid>
+
+              <ion-row justify-content-center>
+
+                <button (click)="gotocart()" ion-button icon-start clear small>
+
+                    <div>Go To Cart >>></div>
+                  </button>
+              </ion-row>
+
+
+    </div>
+
+</ion-content>

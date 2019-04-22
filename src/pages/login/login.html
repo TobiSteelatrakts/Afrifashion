@@ -1,0 +1,180 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="yelloww">
+    <ion-title>User Login</ion-title>
+   <!-- <button ion-buttons (click)="gotoregister()" item-right><ion-icon ios="ios-add" md="md-add"></ion-icon></button> -->
+
+   <!-- <ion-buttons end>
+      <button (click)="gotoregister()" ion-button icon-only>SignUp
+          <ion-icon color="nucolor" ios="ios-add" md="md-add"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bglogin">
+
+      <ion-grid>
+        <!-- <div id="name" class="animated slideInUp delay-2s">
+          Fashion Point
+        </div> -->
+
+        <ion-row *ngIf="showreset != true">
+          <ion-col col-6 offset-1>
+
+            <div (click)="showloginmethod()" id="namelogin" class="animated slideInUp delay-2s" [ngClass]="showlogin == false ? 'loginclicked': ''">
+              Login
+            </div>
+          </ion-col>
+          <ion-col col-5>
+
+            <div (click)="showsignupmethod()" id="namesignup" class="animated slideInUp delay-2s" [ngClass]="showlogin == false ? 'signupclicked': ''">
+             Signup
+            </div>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="showreset === true">
+            <ion-col col-9>
+
+              <div id="namelogin" class="animated slideInUp delay-2s">
+                Reset Password
+              </div>
+            </ion-col>
+
+          </ion-row>
+
+        </ion-grid>
+
+
+<div *ngIf="showlogin==true" class="animated slideInDown">
+
+    <form  [formGroup]="userDetailsForm" id="formNewProduct" (ngSubmit) = "onsubmitpin(userDetailsForm.value)">
+
+
+                  <ion-item class="formbg shiftlogin">
+                    <ion-label color="light">Email</ion-label>
+                    <ion-input type="text" formControlName="email" required [(ngModel)]='email'></ion-input>
+                  </ion-item>
+
+
+                  <ion-item class="formbg shiftlogin">
+                    <ion-label color="light" >Password</ion-label>
+                    <ion-input type="password" formControlName="password" required [(ngModel)]='password'></ion-input>
+
+
+                  </ion-item>
+
+
+
+                <div >
+                    <!-- [disabled]="!userDetailsForm.get('password').valid || !userDetailsForm.get('username').valid" -->
+                    <button ion-button [disabled]="!userDetailsForm.valid" class="shiftlogin" color="nucolor" block type="submit" >Sign In</button>
+                  <!-- <button ion-button secondary block (click)="logmein()" [disabled]="!closed" type="submit">Sign In</button> -->
+                </div>
+              </form>
+</div>
+
+
+
+<!-- signup -->
+
+<div *ngIf="showsignup==true" class="animated slideInRight">
+
+
+    <form  [formGroup]="adminsignupDetailsForm" id="formNewProduct" (ngSubmit) = "onsubmitpinsignup(adminsignupDetailsForm.value)">
+
+                  <ion-item class="formbg shiftlogin">
+                    <ion-label color="light">Fullname</ion-label>
+                    <ion-input type="text" formControlName="name" required [(ngModel)]='name'></ion-input>
+                  </ion-item>
+
+
+                  <ion-item class="formbg shiftlogin">
+                    <ion-label color="light" >Email</ion-label>
+                    <ion-input type="text" formControlName="email" required [(ngModel)]='email'></ion-input>
+                  </ion-item>
+
+                  <ion-item class="formbg shiftlogin">
+                      <ion-label color="light" >Number</ion-label>
+                      <ion-input type="text" formControlName="number" required [(ngModel)]='number'></ion-input>
+                    </ion-item>
+
+
+                  <ion-item class="formbg shiftlogin">
+                      <ion-label color="light" >Address</ion-label>
+                      <ion-input type="text" formControlName="address" required [(ngModel)]='address'></ion-input>
+                    </ion-item>
+
+                    <ion-item class="formbg shiftlogin">
+                        <ion-label color="light" >Paasword</ion-label>
+                        <ion-input type="password" formControlName="password" required [(ngModel)]='password'></ion-input>
+                      </ion-item>
+
+
+
+                <div >
+                    <!-- [disabled]="!userDetailsForm.get('password').valid || !userDetailsForm.get('username').valid" -->
+                    <button ion-button [disabled]="!adminsignupDetailsForm.valid"  class="shiftlogin" color="nucolor" block type="submit" >Sign Up</button>
+                  <!-- <button ion-button secondary block (click)="logmein()" [disabled]="!closed" type="submit">Sign In</button> -->
+                </div>
+              </form>
+
+
+</div>
+
+
+  <!-- Reset password -->
+  <div *ngIf="showreset==true" class="animated slideInDown">
+
+
+      <ion-item class="formbg shiftlogin">
+          <ion-label color="light" >Email</ion-label>
+          <ion-input type="email"  required [(ngModel)]='resetemail'></ion-input>
+
+
+        </ion-item>
+                  <ion-item class="formbg shiftlogin">
+                    <ion-label color="light" >New Password</ion-label>
+                    <ion-input type="password"  required [(ngModel)]='resetpassword'></ion-input>
+
+
+                  </ion-item>
+
+
+
+                <div >
+                    <!-- [disabled]="!userDetailsForm.get('password').valid || !userDetailsForm.get('username').valid" -->
+                    <button (click)="resetadminpassword()" ion-button class="shiftlogin" color="nucolor" block  >Reset Password</button>
+                  <!-- <button ion-button secondary block (click)="logmein()" [disabled]="!closed" type="submit">Sign In</button> -->
+                </div>
+
+</div>
+
+<!-- end reset password -->
+
+
+
+
+<div  class="forgotpassword">
+  <span (click)="gotoadmin()">Login as Seller --></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <span (click)="gotoreset()">Forgot passord?</span>
+</div>
+<!-- class="tobot" -->
+<div (click)="gotosuperadmin()" class="forgotpassword" style="margin-top: 40%" ><span >Super Admin</span></div>
+<ion-fab right bottom>
+  <button ion-fab color="nucolor" (click)='closeap()'><ion-icon name="close"></ion-icon></button>
+</ion-fab>
+
+
+
+</ion-content>

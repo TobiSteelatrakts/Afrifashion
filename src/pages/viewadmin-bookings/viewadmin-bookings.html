@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ViewProductTabPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>ViewProductTab</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content >
+    <ion-row  *ngIf="isempty==true" justify-content-center>
+        <p>Orders Is Empty, Add product</p>
+      </ion-row>
+
+    <div  *ngFor="let eachproduct of productdata; let i = index;">
+
+        <ion-card >
+
+            <!-- <ion-card-header>
+              Card Header
+            </ion-card-header> -->
+
+            <ion-card-content>
+                <ion-item>
+
+                    <h2 item-start class="textcolor1">#OrderId: {{eachproduct.orderid}}</h2>
+                    <p item-end class="fz1" >Requested: {{eachproduct.userdetails[0]['created_at']}}</p>
+
+                  </ion-item>
+                <ion-item>
+                    <ion-thumbnail item-start>
+                      <img [src]="eachproduct.productdetails[0]['image']">
+                    </ion-thumbnail>
+                    <h2 >{{eachproduct.productdetails[0]['productname']}}</h2>
+                    <p class="textcolor">${{eachproduct.productdetails[0]['productprice']}}</p>
+
+
+
+                  </ion-item>
+                  <ion-item>
+                      <p  class="fz1" >Customer Name: {{eachproduct.userdetails[0]['name']}}</p>
+                      <p  class="fz1" >Email: {{eachproduct.userdetails[0]['email']}}</p>
+                      <p  class="fz1" >Phone Number: {{eachproduct.userdetails[0]['number']}}</p>
+                    </ion-item>
+
+            </ion-card-content>
+
+          </ion-card>
+          </div>
+</ion-content>

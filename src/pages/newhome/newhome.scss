@@ -1,0 +1,61 @@
+page-newhome {
+
+  .enterslide {
+    position: absolute;
+    top: 70px;
+    width: 90%;
+    // margin-left: 100px;
+    left: 20px;
+     z-index: 2;
+  }
+  .searchreslut {
+    position: absolute;
+    top: 120px;
+    left: 50px;
+    width: 80%;
+    z-index: 2;
+  }
+
+  .spinner-container {
+    width: 100%;
+    text-align: center;
+}
+
+.nobg {
+  background-color: rgba(107, 0, 0, 0.767) !important;
+  color: rgb(255, 255, 255) !important;
+  outline: none !important;
+  border: none !important;
+}
+
+  .positonicon {
+    left: 50%;
+  }
+
+  .cardimg {
+
+    z-index: 10000;
+    width: 23%;
+    right: 75%;
+    top: 4%;
+    height: 23%;
+  }
+  .greybg {
+    margin-top: 10px;
+    padding-top: 30px;
+    background-color: rgba(202, 202, 202, 0.349);
+  }
+
+
+  .suggestioncard {
+    position: absolute;
+    opacity: 0;
+    width: 90%;
+    left: 20px;
+    z-index: 4;
+    top: -200px;
+  }
+
+
+
+}

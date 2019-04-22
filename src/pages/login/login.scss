@@ -1,0 +1,67 @@
+page-login {
+
+
+  .bglogin {
+   background-image: url('../assets/icon/splashfashion.jpg');
+   background-size: cover;
+  }
+
+  .bgall {
+    background-color: red !important;
+  }
+
+  .forgotpassword {
+    margin-top: 20px;
+    text-align: center;
+      // text-shadow: 1px 1px 4px rgba(3, 21, 31, 0.459);
+    color: white;
+  }
+
+
+  #namelogin {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    // background: linear-gradient(to right, rgb(246, 41, 41) 0%, #2C3E50 100%);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    font: {
+      size: 30px;
+    };
+  }
+
+  #namesignup {
+    text-align: center;
+    margin-top: 120px;
+    color: rgb(121, 0, 0) ;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgb(0, 3, 5);
+    // background: linear-gradient(to right, rgb(156, 2, 2) 0%, #2C3E50 100%);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    font: {
+      size: 30px;
+    };
+  }
+
+  .ion-label{
+    color: white !important;
+  }
+input[type]{
+    color: rgb(240, 236, 236);
+    background-color: #2C3E50;
+    border-bottom: 1px solid #03a8f418 !important;
+    outline: none !important;
+    }
+
+
+    .tobot {
+      position: absolute;
+      margin-left: -50px;
+      left: 50%;
+      color: rgb(192, 0, 0);
+      bottom: 10px;
+    }
+}

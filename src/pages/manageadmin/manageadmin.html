@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ManageadminPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>Manageadmin</ion-title>
+  </ion-navbar>
+
+
+
+</ion-header> -->
+
+
+<ion-content >
+    <!-- <ion-header class="bar-stable">
+        <h1 class="title">Service Provider Details</h1>
+      </ion-header> -->
+
+      <div style="text-align: center; margin-top: 20px; font-size: 20px; margin-bottom: 10px;">ALL SELLERS</div>
+
+      <div class="row header">
+          <div class="col">Admin Id</div>
+          <div class="col">Name</div>
+          <div class="col">Access</div>
+          <div class="col">Action</div>
+          <div class="col">Action</div>
+        </div>
+
+        <div class="row" *ngFor="let singeadmin of alladmin; let i = index;">
+            <div class="col">{{singeadmin.id}}</div>
+            <div class="col">{{singeadmin.name}}</div>
+            <div class="col">{{singeadmin.access}}</div>
+
+            <div class="col" color="primary" (click)="deleteadmin(singeadmin.id)"><button disableadmin >Delete</button></div>
+            <div class="col" color="primary" (click)="disableadmin(singeadmin.id, singeadmin.access )" ><button  >{{singeadmin.access != 1 ? 'Disable': 'Enable'}} </button></div>
+          </div>
+</ion-content>

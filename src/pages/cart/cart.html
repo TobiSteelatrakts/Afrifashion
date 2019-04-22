@@ -1,0 +1,85 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="yelloww">
+        <ion-row justify-content-right>
+              <ion-title>Cart</ion-title>
+            <button *ngIf="showcart===true" ion-button icon-start clear small>
+              <ion-icon name="cart"></ion-icon>
+              <div>1</div>
+            </button>
+
+          </ion-row>
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content class="greybg">
+
+    <ion-row  *ngIf="showcart==false" justify-content-center>
+        <p>Cart Is Empty</p>
+      </ion-row>
+      <ion-row *ngIf="showcart==false" justify-content-center>
+          <!-- <p (click)="gotoproducts()">Go to products >>></p> -->
+          <button (click)="gotoproducts()" ion-button icon-start clear small>
+
+              <div>Go to products >>></div>
+            </button>
+        </ion-row>
+  <div *ngIf="showcart==true">
+
+      <ion-card class="cartcard">
+
+          <ion-card-content>
+
+              <ion-item>
+
+                  <ion-thumbnail item-start class="cardimg">
+                      <img [src]="productdtailstojson.image">
+                    </ion-thumbnail>
+                    <h2 class="leftmag">{{productdtailstojson.productname}}</h2>
+                    <p class="leftmag">#{{productdtailstojson.productid}}</p>
+                    <p class="leftmag">${{productdtailstojson.productprice}}</p>
+
+
+                  <!-- <button ion-button color="light" item-end>2 &nbsp; &nbsp; &nbsp; &nbsp;   <ion-icon name="arrow-dropdown"></ion-icon></button> -->
+                </ion-item>
+          </ion-card-content>
+
+        </ion-card>
+
+  </div>
+
+
+
+
+  <ion-card class="cardbottom" *ngIf="showcart==true">
+
+      <ion-card-header>
+          <ion-row  justify-content-center>
+            <h2 >Grand Total (Tax Inclusive)</h2>
+        </ion-row>
+        <ion-row  justify-content-center>
+            <p class="totalbold">${{productdtailstojson.productprice}}</p>
+        </ion-row>
+      </ion-card-header>
+
+      <ion-card-content>
+
+          <ion-row justify-content-center>
+              <button [disabled]="booked === true" ion-button round (click)="placeorder()">
+
+                <div>Checkout Now</div>
+              </button>
+          </ion-row>
+      </ion-card-content>
+
+    </ion-card>
+
+
+</ion-content>

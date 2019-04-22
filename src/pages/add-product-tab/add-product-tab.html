@@ -1,0 +1,69 @@
+<!--
+  Generated template for the AddProductTabPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>AddProductTab</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content>
+
+    <div >
+
+
+        <form  [formGroup]="adminaddproductForm" id="formNewProducdadd" (ngSubmit) = "onsubmitpinproduct(adminaddproductForm.value)">
+
+                      <ion-item >
+                        <ion-label >Product Name</ion-label>
+                        <ion-input type="text" formControlName="productname" required [(ngModel)]='productname'></ion-input>
+                      </ion-item>
+
+
+                      <ion-item >
+                        <ion-label  >Product Price</ion-label>
+                        <ion-input type="text" formControlName="productprice" required [(ngModel)]='productprice'></ion-input>
+                      </ion-item>
+
+                      <ion-item >
+                          <!-- <ion-label color="light" >Category</ion-label>
+                          <select formControlName="productcategory" required autofocus placeholder="Select Category" [(ngModel)]='productcategory'> -->
+                              <!-- <option >Select category</option> -->
+                              <!-- <option *ngFor="cat of staffcateroryarray" value="1">{{cat}}</option> -->
+                              <!-- <option [selected]="cat.name[0]" [value]="cat.id"  *ngFor="let cat of productcategorydata; let i = index">{{cat.name}}</option>
+                        </select> -->
+                        <ion-label >Category</ion-label>
+                        <ion-select formControlName="productcategory" [(ngModel)]="productcategory"cancelText="Cancel" okText="Ok">
+                          <ion-option [selected]="cat.name[0]" [value]="cat.id"  *ngFor="let cat of productcategorydata; let i = index">{{cat.name}}</ion-option>
+                          </ion-select>
+                            </ion-item>
+
+
+                      <ion-item >
+                          <ion-label >Image</ion-label>
+                          <span> {{iamgefile ? imagenotify: 'Select Image'}}</span>
+                          <ion-input type="file" #file (change)="onFileChange($event)" formControlName="image" accept="image/*"></ion-input>
+                          <span item-end> {{iamgefile ? imagenotify: 'Select Image'}}</span>
+                        </ion-item>
+                        <ion-item >
+
+                          </ion-item>
+
+<ion-row justify-content-center>
+    <button ion-button [disabled]="!adminaddproductForm.valid"  class="shiftlogin"  block type="submit" large>Add Product</button>
+
+</ion-row>
+
+
+                  </form>
+
+
+    </div>
+
+</ion-content>

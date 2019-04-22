@@ -1,0 +1,36 @@
+page-cart {
+
+.cartcard {
+position: relative;
+
+}
+
+.cardimg {
+  position: absolute;
+  z-index: 10000;
+  width: 23%;
+  right: 75%;
+  top: 4%;
+  height: 23%;
+}
+
+.leftmag {
+  margin-left: 30%;
+}
+.totalbold {
+  font-weight: bold;
+}
+
+.greybg {
+  background-color: rgba(202, 202, 202, 0.349);
+}
+
+.cardbottom {
+
+  position: absolute;
+   bottom: 0;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+}
+
+}
